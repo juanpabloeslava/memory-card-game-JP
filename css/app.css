@@ -38,6 +38,7 @@ h1 {
  */
 
 .deck {
+    /* flexbox container */
     width: 660px;
     min-height: 680px;
     background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
@@ -52,6 +53,7 @@ h1 {
 }
 
 .deck .card {
+    /* flexbox container */
     height: 125px;
     width: 125px;
     background: #2e3d49;

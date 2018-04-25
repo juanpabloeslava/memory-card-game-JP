@@ -11,6 +11,8 @@
  */
 
 // Shuffle function from http://stackoverflow.com/a/2450976
+// Apparently it as simple as using it without questioning why the fuck does this works?
+// First create an array an put the cards there, the font-awesome classes that will be shuffled and added then to the different <li> elements. I think (?)
 function shuffle(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
 
