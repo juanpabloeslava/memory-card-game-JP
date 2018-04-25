@@ -1,7 +1,17 @@
 /*
  * Create a list that holds all of your cards
  */
-
+ // array containing all fa classes that'll be displayed as cards later on
+let allCards = [
+	'fa-diamond', 'fa-diamond',
+	'fa-paper-plane-o', 'fa-paper-plane-o',
+	'fa-anchor', 'fa-anchor',
+	'fa-bolt', 'fa-bolt',
+	'fa-cube', 'fa-cube',
+	'fa-bomb', 'fa-bomb',
+	'fa-leaf', 'fa-leaf',
+	'fa-bicycle', 'fa-bicycle'
+];
 
 /*
  * Display the cards on the page
@@ -12,7 +22,6 @@
 
 // Shuffle function from http://stackoverflow.com/a/2450976
 // Apparently it as simple as using it without questioning why the fuck does this works?
-// First create an array an put the cards there, the font-awesome classes that will be shuffled and added then to the different <li> elements. I think (?)
 function shuffle(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
 
@@ -26,7 +35,6 @@ function shuffle(array) {
 
     return array;
 }
-
 
 /*
  * set up the event listener for a card. If a card is clicked:
