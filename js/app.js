@@ -51,11 +51,16 @@ deck.addEventListener('click', flipCard);
 function flipCard (e) {
 	// make the target of the click the end variable of the function
 	let myClickTarget = e.target;
-	// toggle the desired classes on and off
-	myClickTarget.classList.toggle('show');
-	myClickTarget.classList.toggle('open');
-	// test on the console
-	console.log (myClickTarget);
+	// only run if the click is on a card element
+	if ((myClickTarget.nodeName === 'LI') && (myClickTarget.classList.contains('card'))) {
+		// toggle the desired classes on and off
+		myClickTarget.classList.toggle('show');
+		myClickTarget.classList.toggle('open');
+		// test on the console
+		console.log (myClickTarget);
+	} else {
+		console.log('the click was outside the card')
+	}
 }
 
 /*
