@@ -1,4 +1,8 @@
 /*
+ON 'master' BRANCH
+*/
+
+/*
  * Create a list that holds all of your cards
  */
  // array containing all fa classes that'll be displayed as cards later on
