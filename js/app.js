@@ -1,7 +1,10 @@
 /*
- * Create a list that holds all of your cards
- */
- // array containing all fa classes that'll be displayed as cards later on
+IN 'click-to-show' BRANCH
+*/
+
+/* global variables */
+
+// array containing all fa classes that'll be displayed as cards later on
 let allCards = [
 	'fa-diamond', 'fa-diamond',
 	'fa-paper-plane-o', 'fa-paper-plane-o',
@@ -12,6 +15,12 @@ let allCards = [
 	'fa-leaf', 'fa-leaf',
 	'fa-bicycle', 'fa-bicycle'
 ];
+// others
+let deck = document.querySelector('.deck');
+
+/*
+ * Create a list that holds all of your cards
+ */
 
 /*
  * Display the cards on the page
@@ -36,9 +45,7 @@ function shuffle(array) {
     return array;
 }
 
-/* click on the card and show it */
-let deck = document.querySelector('.deck');
-
+/* FUNCTION: click on the card and show it */
 deck.addEventListener('click', flipCard);
 
 function flipCard (e) {
