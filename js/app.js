@@ -19,6 +19,7 @@ let allCards = [
 ];
 // from DOM
 let deck = document.querySelector('.deck');
+const restartBtn = document.querySelector('#restart-btn');
 // my variables
 console.log('this is how the normal deck looks:');
 console.log(deck);
@@ -26,6 +27,11 @@ console.log(deck);
 /* Event Listeners */
 // flip cards
 deck.addEventListener('click', flipCard);
+// Re-start button events
+restartBtn.addEventListener('click', function () {
+	// re-shuffle
+	shuffleDeck();
+});
 
 // FUNCTION: Initial setup for page load
 function shuffleDeck () {
@@ -44,7 +50,6 @@ function shuffleDeck () {
 	console.log(deck);
 }
 
-
 // FUNCTION: Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
@@ -60,8 +65,7 @@ function shuffle(array) {
     return array;
 }
 
-
-/* FUNCTION: click on the card and show it */
+// FUNCTION: click on the card and show it
 function flipCard (e) {
 	// make the target of the click the end variable of the function
 	let myClickTarget = e.target;
