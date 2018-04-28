@@ -30,49 +30,37 @@ console.log(deck);
  */
 
 // FUNCTION: Initial setup for page load
-function firstSetUp () {
+function shuffleDeck () {
 	// Erase current cards inside deck
 	deck.innerHTML = '';
+	// shuffle the cards and store it in a new var
 	let shuffledCards = shuffle(allCards);
-	/* 
-	the total amount of items created should be the total number of items contained in shuffledCards (d.H shuffleCards.length).
-	For each item, it should create a <li> item with a 
-	*/
-	// draw the empty cards within the container
-	for (let listElement = 0; listElement < allCards.length; listElement++) {
-		// for eavery iteration of the loop it'll add a list element to the empty deck
+	// re-draw the deck, this time with the shuffled cards inside
+	for (let i = 0; i < allCards.length; i++) {
+		// for eavery iteration of the loop it'll add a list element to the empty deck, and assign a new card from the shuffleCards var
 		deck.innerHTML += 
 						'<li class="card">' + 
-							'<i class=""></i>' +
+							'<i class="' + shuffledCards[i] + '"></i>' +
 						'</li>';
 	}
-	// store each newly created empty card into a variable
-	let cardItems = document.querySelectorAll('.card');
-	// give each empty card a class from the shuffled list
-	for (let i = 0; i < allCards.length; i++) {
-		cardItems[i].className = shuffledCards[i];
-	}
-
-	// FUNCTION: Shuffle function from http://stackoverflow.com/a/2450976
-	function shuffle(array) {
-	    var currentIndex = array.length, temporaryValue, randomIndex;
-	    // this does something
-	    while (currentIndex !== 0) {
-	        randomIndex = Math.floor(Math.random() * currentIndex);
-	        currentIndex -= 1;
-	        temporaryValue = array[currentIndex];
-	        array[currentIndex] = array[randomIndex];
-	        array[randomIndex] = temporaryValue;
-	    }
-	    // this returns something too
-	    return array;
-	}
-
-
-	console.log('now the deck looks like this:');
 	console.log(deck);
 }
 
+
+// FUNCTION: Shuffle function from http://stackoverflow.com/a/2450976
+function shuffle(array) {
+    var currentIndex = array.length, temporaryValue, randomIndex;
+    // this does something
+    while (currentIndex !== 0) {
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+    }
+    // this returns something too
+    return array;
+}
 
 /*
  * set up the event listener for a card. If a card is clicked:
