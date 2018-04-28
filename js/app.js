@@ -1,7 +1,10 @@
 /*
 ON 'master' BRANCH
 */
+
+// test
 console.log('starting now');
+
 /* global variables */
 // var containing all classes
 let allCards = [
@@ -19,15 +22,10 @@ let deck = document.querySelector('.deck');
 // my variables
 console.log('this is how the normal deck looks:');
 console.log(deck);
-/*
- * Create a list that holds all of your cards
- */
-/*
- * Display the cards on the page
- *   - shuffle the list of cards using the provided "shuffle" method below
- *   - loop through each card and create its HTML
- *   - add each card's HTML to the page
- */
+
+/* Event Listeners */
+// flip cards
+deck.addEventListener('click', flipCard);
 
 // FUNCTION: Initial setup for page load
 function shuffleDeck () {
@@ -50,7 +48,7 @@ function shuffleDeck () {
 // FUNCTION: Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
-    // this does something
+ 	// this does something
     while (currentIndex !== 0) {
         randomIndex = Math.floor(Math.random() * currentIndex);
         currentIndex -= 1;
@@ -61,6 +59,34 @@ function shuffle(array) {
     // this returns something too
     return array;
 }
+
+
+/* FUNCTION: click on the card and show it */
+function flipCard (e) {
+	// make the target of the click the end variable of the function
+	let myClickTarget = e.target;
+	// only run if the click is on a card element
+	if ((myClickTarget.nodeName === 'LI') && (myClickTarget.classList.contains('card'))) {
+		// toggle the desired classes on and off
+		myClickTarget.classList.toggle('show');
+		myClickTarget.classList.toggle('open');
+		// test on the console
+		console.log (myClickTarget);
+	} else {
+		console.log('the click was outside the card')
+	}
+}
+
+
+/*
+ * Create a list that holds all of your cards
+ */
+ /*
+ * Display the cards on the page
+ *   - shuffle the list of cards using the provided "shuffle" method below
+ *   - loop through each card and create its HTML
+ *   - add each card's HTML to the page
+ */
 
 /*
  * set up the event listener for a card. If a card is clicked:
