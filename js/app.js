@@ -3,8 +3,7 @@ IN 'click-to-show' BRANCH
 */
 
 /* global variables */
-
-// array containing all fa classes that'll be displayed as cards later on
+// var containing all classes
 let allCards = [
 	'fa-diamond', 'fa-diamond',
 	'fa-paper-plane-o', 'fa-paper-plane-o',
@@ -15,9 +14,8 @@ let allCards = [
 	'fa-leaf', 'fa-leaf',
 	'fa-bicycle', 'fa-bicycle'
 ];
-// others
+// from DOM
 let deck = document.querySelector('.deck');
-
 /*
  * Create a list that holds all of your cards
  */
@@ -30,10 +28,9 @@ let deck = document.querySelector('.deck');
  */
 
 // Shuffle function from http://stackoverflow.com/a/2450976
-// Apparently it as simple as using it without questioning why the fuck does this works?
 function shuffle(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
-
+ 	// this does something
     while (currentIndex !== 0) {
         randomIndex = Math.floor(Math.random() * currentIndex);
         currentIndex -= 1;
@@ -41,7 +38,7 @@ function shuffle(array) {
         array[currentIndex] = array[randomIndex];
         array[randomIndex] = temporaryValue;
     }
-
+    // this returns something too
     return array;
 }
 
